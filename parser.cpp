@@ -21,8 +21,8 @@
 #include "aidl_language_y.h"
 #include "logging.h"
 
-void yylex_init(void**);
-void yylex_destroy(void*);
+int yylex_init(void**);
+int yylex_destroy(void*);
 void yyset_in(FILE* f, void*);
 int yyparse(Parser*);
 YY_BUFFER_STATE yy_scan_buffer(char*, size_t, void*);

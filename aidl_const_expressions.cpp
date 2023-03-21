@@ -28,6 +28,8 @@
 #include <android-base/parseint.h>
 #include <android-base/strings.h>
 
+#include <utils/uitils_overflow_check_ms.h>
+
 using android::base::ConsumeSuffix;
 using android::base::EndsWith;
 using android::base::Join;

@@ -20,9 +20,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <sys/param.h>
 #include <sys/stat.h>
+#ifdef _MSC_VER
+#include <string.h>
+#define strcasecmp _stricmp
+#else
+#include <sys/param.h>
 #include <unistd.h>
+#endif
 #include <algorithm>
 #include <iostream>
 #include <map>
@@ -55,6 +60,10 @@
 
 #ifndef O_BINARY
 #  define O_BINARY  0
+#endif
+
+#ifdef interface
+#undef interface
 #endif
 
 using android::base::Join;
@@ -642,7 +651,8 @@ AidlError load_and_validate_aidl(const std::string& input_file_name, const Optio
 
     // Ensure that untyped List/Map is not used in a parcelable, a union and a stable interface.
 
-    std::function<void(const AidlTypeSpecifier&, const AidlNode*)> check_untyped_container =
+    std::function<void(const AidlTypeSpecifier&, const AidlNode*)> check_untyped_container;
+    check_untyped_container =
         [&err, &check_untyped_container](const AidlTypeSpecifier& type, const AidlNode* node) {
           if (type.IsGeneric()) {
             std::for_each(type.GetTypeParameters().begin(), type.GetTypeParameters().end(),

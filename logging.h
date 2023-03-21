@@ -69,7 +69,7 @@ class AidlErrorLog {
 // helps generate slightly faster/smaller code.
 class AidlAbortOnDestruction {
  public:
-  __attribute__((noreturn)) ~AidlAbortOnDestruction() { abort(); }
+  /*__attribute__((noreturn))*/ ~AidlAbortOnDestruction() { abort(); }
 };
 
 #define AIDL_ERROR(CONTEXT) ::AidlErrorLog(AidlErrorLog::ERROR, (CONTEXT))

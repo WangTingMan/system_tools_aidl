@@ -40,13 +40,6 @@
 #include "logging.h"
 #include "permission.h"
 
-#ifdef _WIN32
-int isatty(int  fd)
-{
-    return (fd == 0);
-}
-#endif
-
 using android::aidl::IoDelegate;
 using android::base::Error;
 using android::base::Join;
@@ -214,7 +207,8 @@ std::string AidlAnnotation::TypeToString(Type type) {
     if (type == schema.type) return schema.name;
   }
   AIDL_FATAL(AIDL_LOCATION_HERE) << "Unrecognized type: " << static_cast<size_t>(type);
-  __builtin_unreachable();
+  /*__builtin_unreachable();*/
+  return "";
 }
 
 std::unique_ptr<AidlAnnotation> AidlAnnotation::Parse(

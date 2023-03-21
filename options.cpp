@@ -20,9 +20,11 @@
 #include <android-base/parseint.h>
 #include <android-base/result.h>
 #include <android-base/strings.h>
-#include <getopt.h>
+#include <cutils/getopt.h>
 #include <stdlib.h>
+#ifndef _MSC_VER
 #include <unistd.h>
+#endif
 
 #include <algorithm>
 #include <iostream>
@@ -242,13 +244,14 @@ Options Options::From(const vector<string>& args) {
   if (argc >= 1 && args.at(0) == "aidl-cpp") {
     lang = Options::Language::CPP;
   }
-  const char* argv[argc + 1];
+  std::vector<const char*> argv;
+  argv.resize(argc + 1);
   for (int i = 0; i < argc; i++) {
     argv[i] = args.at(i).c_str();
   }
   argv[argc] = nullptr;
 
-  return Options(argc, argv, lang);
+  return Options(argc, argv.data(), lang);
 }
 
 Options::Options(int argc, const char* const raw_argv[], Options::Language default_lang)

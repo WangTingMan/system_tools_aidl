@@ -189,7 +189,7 @@ class AidlParameterizable {
   const std::vector<T>& GetTypeParameters() const { return *type_params_; }
   bool CheckValid() const;
 
-  __attribute__((warn_unused_result)) bool SetTypeParameters(std::vector<T>* type_params) {
+  /*__attribute__((warn_unused_result))*/ bool SetTypeParameters(std::vector<T>* type_params) {
     if (type_params_) return false;
     type_params_.reset(type_params);
     return true;
@@ -462,7 +462,7 @@ class AidlTypeSpecifier final : public AidlAnnotatable,
   //    T    to T[]
   // or T    to T[N]
   // or T[N] to T[N][M]
-  __attribute__((warn_unused_result)) bool MakeArray(ArrayType array_type);
+  /*__attribute__((warn_unused_result))*/ bool MakeArray(ArrayType array_type);
 
   // Resolve the base type name to a fully-qualified name. Return false if the
   // resolution fails.

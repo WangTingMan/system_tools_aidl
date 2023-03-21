@@ -23,7 +23,11 @@
 #ifdef _WIN32
 #include <direct.h>
 #include <windows.h>
+#include <corecrt_io.h>
 #undef ERROR
+#ifndef ssize_t
+#define ssize_t int64_t
+#endif
 #else
 #include <dirent.h>
 #include <sys/stat.h>

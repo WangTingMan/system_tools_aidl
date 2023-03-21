@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\aidl.cpp" />
+    <ClCompile Include="..\..\aidl_checkapi.cpp" />
+    <ClCompile Include="..\..\aidl_const_expressions.cpp" />
+    <ClCompile Include="..\..\aidl_dumpapi.cpp" />
+    <ClCompile Include="..\..\aidl_language.cpp" />
+    <ClCompile Include="..\..\aidl_to_cpp.cpp" />
+    <ClCompile Include="..\..\aidl_to_cpp_common.cpp" />
+    <ClCompile Include="..\..\aidl_to_java.cpp" />
+    <ClCompile Include="..\..\aidl_to_ndk.cpp" />
+    <ClCompile Include="..\..\aidl_to_rust.cpp" />
+    <ClCompile Include="..\..\aidl_typenames.cpp" />
+    <ClCompile Include="..\..\ast_java.cpp" />
+    <ClCompile Include="..\..\check_valid.cpp" />
+    <ClCompile Include="..\..\code_writer.cpp" />
+    <ClCompile Include="..\..\comments.cpp" />
+    <ClCompile Include="..\..\diagnostics.cpp" />
+    <ClCompile Include="..\..\generate_aidl_mappings.cpp" />
+    <ClCompile Include="..\..\generate_cpp.cpp" />
+    <ClCompile Include="..\..\generate_java.cpp" />
+    <ClCompile Include="..\..\generate_java_binder.cpp" />
+    <ClCompile Include="..\..\generate_ndk.cpp" />
+    <ClCompile Include="..\..\generate_rust.cpp" />
+    <ClCompile Include="..\..\import_resolver.cpp" />
+    <ClCompile Include="..\..\io_delegate.cpp" />
+    <ClCompile Include="..\..\location.cpp" />
+    <ClCompile Include="..\..\logging.cpp" />
+    <ClCompile Include="..\..\main.cpp" />
+    <ClCompile Include="..\..\options.cpp" />
+    <ClCompile Include="..\..\parser.cpp" />
+    <ClCompile Include="..\..\permission.cpp" />
+    <ClCompile Include="..\..\preprocess.cpp" />
+    <ClCompile Include="aidl_language_l.cpp" />
+    <ClCompile Include="aidl_language_y.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\aidl.h" />
+    <ClInclude Include="..\..\aidl_checkapi.h" />
+    <ClInclude Include="..\..\aidl_dumpapi.h" />
+    <ClInclude Include="..\..\aidl_language.h" />
+    <ClInclude Include="..\..\aidl_to_cpp.h" />
+    <ClInclude Include="..\..\aidl_to_cpp_common.h" />
+    <ClInclude Include="..\..\aidl_to_java.h" />
+    <ClInclude Include="..\..\aidl_to_ndk.h" />
+    <ClInclude Include="..\..\aidl_to_rust.h" />
+    <ClInclude Include="..\..\aidl_typenames.h" />
+    <ClInclude Include="..\..\ast_java.h" />
+    <ClInclude Include="..\..\check_valid.h" />
+    <ClInclude Include="..\..\code_writer.h" />
+    <ClInclude Include="..\..\comments.h" />
+    <ClInclude Include="..\..\diagnostics.h" />
+    <ClInclude Include="..\..\generate_aidl_mappings.h" />
+    <ClInclude Include="..\..\generate_cpp.h" />
+    <ClInclude Include="..\..\generate_cpp_analyzer.h" />
+    <ClInclude Include="..\..\generate_java.h" />
+    <ClInclude Include="..\..\generate_ndk.h" />
+    <ClInclude Include="..\..\generate_rust.h" />
+    <ClInclude Include="..\..\import_resolver.h" />
+    <ClInclude Include="..\..\io_delegate.h" />
+    <ClInclude Include="..\..\location.h" />
+    <ClInclude Include="..\..\logging.h" />
+    <ClInclude Include="..\..\options.h" />
+    <ClInclude Include="..\..\os.h" />
+    <ClInclude Include="..\..\parser.h" />
+    <ClInclude Include="..\..\permission.h" />
+    <ClInclude Include="..\..\preprocess.h" />
+    <ClInclude Include="aidl_language_y.h" />
+    <ClInclude Include="location.hh" />
+    <ClInclude Include="position.hh" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{c79576d6-36c1-4e00-b4bb-e8ff510bcf81}</ProjectGuid>
+    <RootNamespace>aidlcpp</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(SolutionDir)libbase\include;$(SolutionDir)system\external\fmtlib\include;$(SolutionDir)system\external\googletest\googletest\include;$(SolutionDir)core\libcutils\include;$(SolutionDir)core\libutils\include;$(ProjectDir);$(ProjectDir)../..;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration);$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg">
+    <VcpkgEnabled>true</VcpkgEnabled>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;AIDL_CPP_BUILD;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <DisableSpecificWarnings>4251;4068</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>libbase.lib;libgtest.lib;fmtlib.lib;libcutils.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

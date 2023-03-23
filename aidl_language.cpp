@@ -310,11 +310,11 @@ bool AidlAnnotation::CheckValid() const {
   }
   // For @Enforce annotations, validates the expression.
   if (schema_.type == AidlAnnotation::Type::PERMISSION_ENFORCE) {
-    auto expr = EnforceExpression();
-    if (!expr.ok()) {
-      AIDL_ERROR(this) << "Unable to parse @EnforcePermission annotation: " << expr.error();
-      return false;
-    }
+     auto expr = EnforceExpression();
+     if (!expr.ok()) {
+       AIDL_ERROR(this) << "Unable to parse @EnforcePermission annotation: " << expr.error();
+       return false;
+     }
   }
   return true;
 }
@@ -431,7 +431,7 @@ bool AidlAnnotatable::IsNullable() const {
 bool AidlAnnotatable::IsHeapNullable() const {
   auto annot = GetAnnotation(annotations_, AidlAnnotation::Type::NULLABLE);
   if (annot) {
-    return annot->ParamValue<bool>("heap").value_or(false);
+      return annot->ParamValue<bool>("heap").value_or(false);
   }
   return false;
 }
@@ -526,7 +526,7 @@ bool AidlAnnotatable::IsStableApiParcelable(Options::Language lang) const {
 bool AidlAnnotatable::JavaDerive(const std::string& method) const {
   auto annotation = GetAnnotation(annotations_, AidlAnnotation::Type::JAVA_DERIVE);
   if (annotation != nullptr) {
-    return annotation->ParamValue<bool>(method).value_or(false);
+      return annotation->ParamValue<bool>(method).value_or(false);
   }
   return false;
 }

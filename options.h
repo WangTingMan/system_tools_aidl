@@ -101,6 +101,8 @@ class Options final {
 
   Options(int argc, const char* const argv[], Language default_lang = Language::UNSPECIFIED);
 
+  Options() = default;
+
   Options PlusImportDir(const std::string& import_dir) const {
     Options copy(*this);
     copy.import_dirs_.insert(import_dir);
@@ -120,10 +122,26 @@ class Options final {
 
   uint32_t GetMinSdkVersion() const { return min_sdk_version_; }
 
+  void SetMinSdkVersion( uint32_t a_version )
+  {
+      min_sdk_version_ = a_version;
+  }
+
   Language TargetLanguage() const { return language_; }
+
+  void SetTargetLanguage( Language a_lang )
+  {
+      language_ = a_lang;
+  }
+
   bool IsCppOutput() const { return language_ == Language::CPP || language_ == Language::NDK; }
 
   Task GetTask() const { return task_; }
+
+  void SetTask( Task a_tsk )
+  {
+      task_ = a_tsk;
+  }
 
   CheckApiLevel GetCheckApiLevel() const { return check_api_level_; }
 
@@ -139,13 +157,28 @@ class Options final {
 
   bool GenRpc() const { return gen_rpc_; }
 
+  void SetGenRpc( bool a_rpc )
+  {
+      gen_rpc_ = a_rpc;
+  }
+
   bool GenTraces() const { return gen_traces_; }
+
+  void SetGenTraces( bool a_gen )
+  {
+      gen_traces_ = a_gen;
+  }
 
   bool GenTransactionNames() const { return gen_transaction_names_; }
 
   bool DependencyFileNinja() const { return dependency_file_ninja_; }
 
   const vector<string>& InputFiles() const { return input_files_; }
+
+  void SetInputFiles( vector<string> a_input_files_ )
+  {
+      input_files_ = a_input_files_;
+  }
 
   // Path to the output file. This is used only when there is only one
   // output file for the invocation. When there are multiple outputs
@@ -156,9 +189,19 @@ class Options final {
   // Path to the directory where output file(s) will be generated under.
   const string& OutputDir() const { return output_dir_; }
 
+  void SetOutputDir( string a_dir)
+  {
+      output_dir_ = a_dir;
+  }
+
   // Path to the directory where header file(s) will be generated under.
   // Only used when TargetLanguage() == Language::CPP
   const string& OutputHeaderDir() const { return output_header_dir_; }
+
+  void SetOutputHeaderDir( std::string a_dir )
+  {
+      output_header_dir_ = a_dir;
+  }
 
   bool FailOnParcelable() const { return fail_on_parcelable_; }
 
@@ -170,7 +213,10 @@ class Options final {
 
   bool DumpNoLicense() const { return dump_no_license_; }
 
-  bool Ok() const { return error_message_.stream_.str().empty(); }
+  bool Ok() const
+  {
+      return error_message_.stream_.str().empty();
+  }
 
   string GetErrorMessage() const { return error_message_.stream_.str(); }
 
@@ -187,7 +233,6 @@ class Options final {
   size_t onTransact_non_outline_count_{275u};
 
  private:
-  Options() = default;
 
   const string myname_;
   Language language_ = Language::UNSPECIFIED;

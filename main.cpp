@@ -30,7 +30,19 @@ constexpr Options::Language kDefaultLang = Options::Language::JAVA;
 #endif
 
 int main(int argc, char* argv[]) {
-  Options options(argc, argv, kDefaultLang);
+    Options options{/*argc, argv, kDefaultLang*/};
+
+  options.ClearError();
+  options.SetTask( android::aidl::Options::Task::COMPILE );
+  options.SetTargetLanguage( android::aidl::Options::Language::CPP );
+  vector<string> files;
+  files.emplace_back( "E:/VCLAB/component/x64/Debug/android/bluetooth/test.aidl" );
+  options.SetInputFiles( files );
+  options.SetOutputDir( "E:/VCLAB/component/x64/Debug/android/bluetooth" );
+  options.SetMinSdkVersion( 30 );
+  options.SetOutputHeaderDir( "E:/VCLAB/component/x64/Debug/android/bluetooth" );
+  options.SetGenRpc( true );
+  options.SetGenTraces( true );
 
   // Only minimal functionality should go here, so that as much of possible of
   // the aidl compiler is mocked with the single function `aidl_entry`

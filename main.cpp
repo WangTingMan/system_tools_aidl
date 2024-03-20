@@ -32,7 +32,6 @@ constexpr Options::Language kDefaultLang = Options::Language::JAVA;
 int main(int argc, char* argv[]) {
     Options options{/*argc, argv, kDefaultLang*/};
 
-  options.ClearError();
   options.SetTask( android::aidl::Options::Task::COMPILE );
   options.SetTargetLanguage( android::aidl::Options::Language::CPP );
   vector<string> files;
